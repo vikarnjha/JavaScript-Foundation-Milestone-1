@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Move the Image</title>
+  </head>
+  <body>
+    <img
+      id="image"
+      src="https://images.pexels.com/photos/5015227/pexels-photo-5015227.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+      width="250px"
+      style="position: absolute; left: 0; top: 0"
+    />
+
+    <script>
+      const image = document.getElementById("image");
+      let x = 0;
+      let y = 0;
+
+      document.addEventListener("keydown", (event) => {
+        if (event.code === "ArrowLeft") {
+          x -= 10;
+        } else if (event.code === "ArrowRight") {
+          x += 10;
+        } else if (event.code === "ArrowUp") {
+          y -= 10;
+        } else if (event.code === "ArrowDown") {
+          y += 10;
+        }
+        image.style.left = x + "px";
+        image.style.top = y + "px";
+      });
+    </script>
+  </body>
+</html>

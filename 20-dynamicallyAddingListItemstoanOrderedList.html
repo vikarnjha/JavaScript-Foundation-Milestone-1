@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adding Dynamic List</title>
+  </head>
+  <body>
+    <h1>What you'll learn</h1>
+    <ol id="list"></ol>
+    <button id="click">Click to add Next</button>
+    <script>
+      const listItems = [
+        "HTML and Semantics",
+        "Starting with CSS",
+        "Working Template",
+        "Mobile responsive webpages",
+        "Grid and Flex-box in CSS",
+        "Projects using HTML & CSS",
+        "Version Control and Git",
+        "Getting Started with JavaScript",
+        "Advance JavaScript",
+        "Working with DOM",
+        "Making Projects using HTML, CSS and JavaScript",
+        "Understanding Fundamental of Computer Science",
+        "Getting Started with Database",
+        "Understanding the Database",
+        "Starting with NodeJS and Express",
+        "Understanding React and its Fundamentals",
+        "Understanding Hooks and Routers",
+        "Starting and Completing Full Fledge Projects",
+      ];
+
+      let currentItemIndex = 0;
+      let click = document.getElementById("click");
+      click.addEventListener("click", () => {
+        const list = document.getElementById("list");
+        if (currentItemIndex < listItems.length) {
+          const newItem = document.createElement("li");
+          newItem.textContent = listItems[currentItemIndex];
+          list.appendChild(newItem);
+          currentItemIndex++;
+        } else {
+          const message = document.createElement("p");
+          message.textContent = "All items have been added successfully";
+          list.appendChild(message);
+          document.getElementById("click").style.visibility="hidden";
+        }
+      });
+    </script>
+  </body>
+</html>

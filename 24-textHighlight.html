@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Highlighting</title>
+</head>
+<body>
+    <p id="paragraph">This is a sample paragraph with some words that are longer than eight characters.</p>
+
+<script>
+const paragraph = document.getElementById("paragraph");
+const words = paragraph.textContent.split(" ");
+for (let i = 0; i < words.length; i++) {
+  if (words[i].length > 8) {
+    words[i] = "<span style='background-color: yellow'>" + words[i] + "</span>";
+  }
+}
+paragraph.innerHTML = words.join(" ");
+</script>
+
+</body>
+</html>

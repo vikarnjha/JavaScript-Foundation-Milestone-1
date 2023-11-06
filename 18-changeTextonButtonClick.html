@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text change on Button click</title>
+    <style>
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .container {
+        box-shadow: 0 0 5px black;
+        padding: 25px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      button {
+        background-color: aqua;
+        font-weight: bold;
+        font-size: 18px;
+        padding: 10px;
+        text-align: center;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+      h1 {
+        font-size: 50px;
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="content">The most affordable learning platform</h1>
+      <button id="click">Click to toggle</button>
+    </div>
+  </body>
+    <script>
+      let content = document.getElementById("content");
+      let click = document.getElementById("click");
+
+      click.addEventListener("click", () => {
+        if (content.innerHTML === "The most affordable learning platform") {
+          content.innerHTML = "PW Skills";
+          content.style.color = "red";
+        } else {
+          content.innerHTML = "The most affordable learning platform";
+          content.style.color = "green";
+        }
+      });
+    </script>
+</html>
